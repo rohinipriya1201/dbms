@@ -1,1 +1,2 @@
-drop student;
+--
+drop table student;
