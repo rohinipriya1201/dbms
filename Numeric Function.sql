@@ -1,1 +1,35 @@
 
+CREATE TABLE Numbers (
+    Num NUMBER
+);
+
+INSERT INTO Numbers VALUES (10);
+INSERT INTO Numbers VALUES (-15);
+INSERT INTO Numbers VALUES (25);
+INSERT INTO Numbers VALUES (16);
+
+COMMIT;
+
+-- 1. ABS
+SELECT ABS(Num) AS Absolute_Value FROM Numbers;
+
+-- 2. CEIL
+SELECT CEIL(10.3) AS Ceiling_Value FROM DUAL;
+
+-- 3. FLOOR
+SELECT FLOOR(10.8) AS Floor_Value FROM DUAL;
+
+-- 4. ROUND
+SELECT ROUND(15.678, 2) AS Rounded_Value FROM DUAL;
+
+-- 5. MOD
+SELECT MOD(10, 3) AS Remainder FROM DUAL;
+
+-- 6. POWER
+SELECT POWER(2, 3) AS Power_Value FROM DUAL;
+
+-- 7. SQRT
+SELECT SQRT(25) AS Square_Root FROM DUAL;
+
+-- 8. TRUNC
+SELECT TRUNC(15.678, 2) AS Truncated_Value FROM DUAL;
