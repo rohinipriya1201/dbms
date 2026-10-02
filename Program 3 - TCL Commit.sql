@@ -1,1 +1,5 @@
 
+INSERT INTO Student
+VALUES (102, 'Riya', 99);
+
+COMMIT;
