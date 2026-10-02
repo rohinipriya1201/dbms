@@ -1,13 +1,14 @@
 SET SERVEROUTPUT ON;
 
 DECLARE
-    n NUMBER := 10;
-    s NUMBER := 0;
+    s VARCHAR2(30) := 'HELLO';
+    rev VARCHAR2(30) := '';
 BEGIN
-    FOR i IN 1..n LOOP
-        s := s + i;
+    FOR i IN REVERSE 1..LENGTH(s) LOOP
+        rev := rev || SUBSTR(s, i, 1);
     END LOOP;
 
-    DBMS_OUTPUT.PUT_LINE('Sum of Series = ' || s);
+    DBMS_OUTPUT.PUT_LINE('Original String = ' || s);
+    DBMS_OUTPUT.PUT_LINE('Reversed String = ' || rev);
 END;
 /
