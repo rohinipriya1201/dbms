@@ -1,1 +1,5 @@
-create table student(id number(10), name varchar(20));
+CREATE TABLE Student (
+    RollNo NUMBER PRIMARY KEY,
+    Name VARCHAR2(30),
+    Mark NUMBER
+);
