@@ -1,1 +1,7 @@
+ALTER TABLE Student
+ADD City VARCHAR2(20);
 
+ALTER TABLE Student
+DROP COLUMN City;
+
+DESC student;
