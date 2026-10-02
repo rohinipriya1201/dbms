@@ -1,1 +1,38 @@
 
+CREATE TABLE Student1 (
+    Name VARCHAR2(30)
+);
+
+CREATE TABLE Student2 (
+    Name VARCHAR2(30)
+);
+
+INSERT INTO Student1 VALUES ('Rohini');
+INSERT INTO Student1 VALUES ('Priya');
+INSERT INTO Student1 VALUES ('Ammu');
+
+INSERT INTO Student2 VALUES ('Priya');
+INSERT INTO Student2 VALUES ('Ammu');
+INSERT INTO Student2 VALUES ('Riya');
+
+COMMIT;
+
+-- 1. UNION
+SELECT Name FROM Student1
+UNION
+SELECT Name FROM Student2;
+
+-- 2. UNION ALL
+SELECT Name FROM Student1
+UNION ALL
+SELECT Name FROM Student2;
+
+-- 3. INTERSECT
+SELECT Name FROM Student1
+INTERSECT
+SELECT Name FROM Student2;
+
+-- 4. MINUS
+SELECT Name FROM Student1
+MINUS
+SELECT Name FROM Student2;
