@@ -1,9 +1,13 @@
+SET SERVEROUTPUT ON;
 
 DECLARE
-    a NUMBER := 12;
-    b NUMBER := 18;
+    a NUMBER;
+    b NUMBER;
     t NUMBER;
 BEGIN
+    a := &a;
+    b := &b;
+
     WHILE b != 0 LOOP
         t := MOD(a, b);
         a := b;
