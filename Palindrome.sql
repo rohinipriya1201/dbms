@@ -1,24 +1,16 @@
-
 SET SERVEROUTPUT ON;
 
 DECLARE
-    n NUMBER := 121;
-    temp NUMBER;
-    digit NUMBER;
-    rev NUMBER := 0;
+    a NUMBER := &a;
+    b NUMBER := &b;
+    t NUMBER;
 BEGIN
-    temp := n;
-
-    WHILE temp > 0 LOOP
-        digit := MOD(temp, 10);
-        rev := rev * 10 + digit;
-        temp := TRUNC(temp / 10);
+    WHILE b <> 0 LOOP
+        t := MOD(a, b);
+        a := b;
+        b := t;
     END LOOP;
 
-    IF rev = n THEN
-        DBMS_OUTPUT.PUT_LINE('Palindrome Number');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('Not Palindrome Number');
-    END IF;
+    DBMS_OUTPUT.PUT_LINE('GCD = ' || a);
 END;
 /
