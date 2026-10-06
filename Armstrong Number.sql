@@ -1,24 +1,25 @@
-
 SET SERVEROUTPUT ON;
 
 DECLARE
-    n NUMBER := 153;
+    n NUMBER := &enter;
     temp NUMBER;
     digit NUMBER;
-    s NUMBER := 0;
+    sum NUMBER := 0;
+    digits NUMBER;
 BEGIN
     temp := n;
+    digits := LENGTH(TO_CHAR(n));
 
     WHILE temp > 0 LOOP
         digit := MOD(temp, 10);
-        s := s + POWER(digit, 3);
+        sum := sum + POWER(digit, digits);
         temp := TRUNC(temp / 10);
     END LOOP;
 
-    IF s = n THEN
+    IF sum = n THEN
         DBMS_OUTPUT.PUT_LINE('Armstrong Number');
     ELSE
-        DBMS_OUTPUT.PUT_LINE('Not Armstrong Number');
+        DBMS_OUTPUT.PUT_LINE('Not an Armstrong Number');
     END IF;
 END;
 /
