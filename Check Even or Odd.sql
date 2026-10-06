@@ -1,9 +1,10 @@
-
 SET SERVEROUTPUT ON;
 
 DECLARE
-    n NUMBER := 10;
+    n NUMBER;
 BEGIN
+    n := &n;
+
     IF MOD(n, 2) = 0 THEN
         DBMS_OUTPUT.PUT_LINE('Even Number');
     ELSE
